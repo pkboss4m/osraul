@@ -1,0 +1,292 @@
+@import 'https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap';
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    width: 100%;
+    font-family: Roboto, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #000;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    /* Adicionando o cursor de cruz */
+    cursor: crosshair;
+}
+
+a {
+    text-decoration: none;
+}
+
+video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    opacity: 100%;
+}
+
+.titlekk {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-family: Roboto, sans-serif;
+    color: #ffffff7b;
+    font-weight: 100;
+    font-size: smaller;
+    display: block;
+    font-style: italic;
+    font-size: smaller;
+    margin-bottom: 20px;
+    padding: 2%;
+    overflow: hidden;
+}
+
+.h1-text {
+    font-size: 1.3rem;
+    margin: 40px 0;
+    color: #2c2c2c;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.h1-text i {
+    background-color: #509bfc;
+    color: #fff;
+    width: 40px;
+    height: 40px;
+    box-shadow: 2px 5px 30px rgba(80, 123, 252, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    margin: 0 20px;
+}
+
+.container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    transform-origin: top center;
+}
+
+.perfil {
+    position: relative;
+    min-width: 250px;
+    backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    margin: 20px;
+    position: relative;
+    border-radius: 10px;
+    border: 1px solid rgb(73, 73, 73); /* Adicionando borda prateada */
+}
+
+/* Removendo a borda quando não houver hover */
+.perfil:hover {
+    border: none;
+}
+
+.barra {
+    width: 50%;
+    height: 4px;
+    background: rgba(255, 255, 255, 0);
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 0 0 10px 10px;
+}
+
+.content img {
+    width: 90px;
+    height: 90px;
+    border-radius: 100px;
+    overflow: hidden;
+    object-fit: cover;
+    object-position: top;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.content strong {
+    font-size: 23px;
+    font-weight: 1000;
+    color: #fff;
+    margin-top: 10px;
+}
+
+.content p {
+    font-size: 15px;
+    font-weight: 600;
+    color: #fff;
+    margin: 4px 0 10px;
+}
+
+.content p:hover {
+    text-decoration: underline;
+}
+
+.sociais {
+    margin-top: 1px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 70%;
+}
+
+.sociais a i {
+    margin-right: 9px;
+}
+
+.sociais a {
+    border-radius: 20px;
+    color: #8b8b8b;
+    padding: 8px 20px;
+    font-size: 0.9rem;
+}
+
+.sociais a:hover {
+    color: #fff;
+    box-shadow: 2px 5px 15px rgba(80, 123, 252, 0.05);
+    background-color: rgb(122, 122, 122);
+    transition: all ease 0.5s;
+}
+
+html {
+    font-family: monospace;
+}
+
+.graffiti {
+    font-family: graffiti, sans-serif;
+}
+
+#overlay-toggle {
+    position: absolute;
+    display: none;
+}
+
+.overlay {
+    z-index: 1;
+    background-color: #000001;
+}
+
+.overlay label {
+    display: grid;
+    place-items: center;
+    width: 100vw;
+    height: 100vw;
+    color: #fff;
+    font-size: 2rem;
+}
+
+.no-hover {
+    display: block;
+}
+
+.fullscreen {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-height: 100vh;
+    min-width: 100vw;
+}
+
+body {
+    background-color: #000001 !important;
+    color: #fff !important;
+}
+
+.hover {
+    text-decoration: none;
+    color: gray !important;
+    transition: 0.4s !important;
+}
+
+.hover:hover {
+    transition: 0.4s !important;
+    color: #fff !important;
+}
+
+span::before {
+    content: '\A';
+    white-space: pre;
+}
+
+#center {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+}
+
+#overlay-toggle:checked~.overlay {
+    animation-fill-mode: forwards;
+    animation-name: fade, hide;
+    animation-delay: 0s, 600ms;
+    animation-duration: 600ms, 1ms;
+}
+
+#overlay-toggle:checked~.overlay label {
+    animation-fill-mode: forwards;
+    animation-name: fade;
+    animation-delay: 0s;
+    animation-duration: 500ms;
+}
+
+#canvas-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+@media (hover:hover) {
+    .overlayhover {
+        display: block;
+    }
+
+    .overlayno-hover {
+        display: none;
+    }
+}
+
+@keyframes fade {
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes hide {
+    to {
+        visibility: hidden;
+    }
+}
