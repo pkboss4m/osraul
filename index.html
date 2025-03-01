@@ -4,140 +4,83 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="white">
-    <meta property="og:image" content="images/image.png" type="image/png">
+    <meta property="og:image" content="images.html" type="image/png">
     <link rel="shortcut icon" href="images/fantasma.png" type="image/png">
     <meta property="og:title" content="OS REI DA NET !">
     <meta property="og:description" content="entre o amor e o dinheiro eu vou nas nota azul">
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <link rel="stylesheet" href="../cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900">
     <link rel="stylesheet" href="css/nycolas.css">
-    
     <script src="js/animacao.js"></script>
     <script src="js/api.js"></script>
     <script>
-        function audioPlay() {
-            var audio = document.getElementById("audio");
-            audio.volume = 1.0;
-            audio.currentTime = 0;
-            audio.play();
-        }
+      function audioPlay() {
+          var audio = document.getElementById("audio");
+          audio.volume = 1.0;
+          audio.currentTime = 0;
+          audio.play();
+      }
     </script>
 </head>
 <body>
     <audio loop preload="auto" id="audio">
         <source src="media/music.mp3" type="audio/mp3">
     </audio>
-
     <input type="checkbox" autocomplete="off" id="overlay-toggle">
     <div class="overlay fullscreen">
         <label for="overlay-toggle" onclick="audioPlay();">
             <span class="overlayhover hover" style="font-family: monospace; font-size: 0.6em;">Calma emocionado, a liderança ta de volta.</span>
         </label>
     </div>
-
     <div id="video" class="banner">
         <video autoplay loop muted>
             <source src="media/yu.mp4" type="video/mp4">
             Seu navegador não suporta vídeo.
         </video>
-    </div>
-
-    <div class="container">
-        <div class="perfil">
-            <div class="barra"></div>
-            <div class="content">
-                <img class="profile-img" data-user-id="1243886258506170408" src="#">
-                <strong>pk</strong>
-                <p>opkdrak</p>
+        <h1 class="h1-text"></h1>
+        <div class="container">
+            <div class="perfil">
+                <div class="barra"></div>
+                <div class="content">
+                    <img class="profile-img" src="images/pk.png" alt="pk">
+                    <strong>pk</strong>
+                    <p>opkdrak</p>
+                </div>
+                <div class="badges">
+                    <img src="images/discordnitro.svg" width="25" height="25">
+                    <img src="images/boost12month.svg" width="25" height="25">
+                </div>
+                <div class="sociais">
+                    <a href="https://discord.gg/AFpTjC8ctP" target="_blank"><img src="images/discord.png" width="25" height="25"></a>
+                    <a href="https://www.youtube.com/@pkpagode" target="_blank"><img src="images/yt.png" width="25" height="25"></a>
+                </div>
             </div>
-            <div class="badges">
-                <img src="images/discordnitro.svg" width="25" height="25">
-                <img src="images/boost12month.svg" width="25" height="25">
-            </div>
-            <div class="sociais">
-                <a href="https://discord.gg/AFpTjC8ctP" target="_blank"><img src="images/discord.png" width="25" height="25"></a>
-                <a href="https://www.youtube.com/@opkdrak" target="_blank"><img src="images/yt.png" width="25" height="25"></a>
+            <div class="perfil">
+                <div class="barra"></div>
+                <div class="content">
+                    <img class="profile-img" src="images/abner.png" alt="abner">
+                    <strong>abner</strong>
+                    <p>.arrasca</p>
+                </div>
+                <div class="badges">
+                    <img src="images/discordnitro.svg" width="25" height="25">
+                    <img src="images/boost12month.svg" width="25" height="25">
+                </div>
+                <div class="sociais">
+                    <a href="https://discord.gg/AFpTjC8ctP" target="_blank"><img src="images/discord.png" width="25" height="25"></a>
+                    <a href="https://www.instagram.com/og_abner7/" target="_blank"><img src="images/insta.png" width="25" height="25"></a>
+                </div>
             </div>
         </div>
-
-        <div class="perfil">
-            <div class="barra"></div>
-            <div class="content">
-                <img class="profile-img" data-user-id="792496884849442857" src="#">
-                <strong>abner</strong>
-                <p>.arrasca</p>
-            </div>
-            <div class="badges">
-                <img src="images/discordnitro.svg" width="25" height="25">
-                <img src="images/boost12month.svg" width="25" height="25">
-            </div>
-            <div class="sociais">
-                <a href="https://discord.gg/AFpTjC8ctP" target="_blank"><img src="images/discord.png" width="25" height="25"></a>
-                <a href="https://www.instagram.com/og_abner7/" target="_blank"><img src="images/insta.png" width="25" height="25"></a>
-            </div>
-        </div>
     </div>
-
     <script>
-        var rev = "fwd";
-        function titlebar(val) {
-            var msg = "Quem é ? Policia Federal 🏃💨";
-            var speed = 100;
-            var pos = val;
-            var le = msg.length;
-            if (rev == "fwd") {
-                if (pos < le) {
-                    pos++;
-                    document.title = msg.substr(0, pos);
-                    setTimeout("titlebar(" + pos + ")", speed);
-                } else {
-                    rev = "bwd";
-                    setTimeout("titlebar(" + pos + ")", speed);
-                }
-            } else {
-                if (pos > 0) {
-                    pos--;
-                    document.title = msg.substr(le - pos, le);
-                    setTimeout("titlebar(" + pos + ")", speed);
-                } else {
-                    rev = "fwd";
-                    setTimeout("titlebar(" + pos + ")", speed);
-                }
-            }
-        }
-        titlebar(0);
-    </script>
-
-    <script>
-        AnimacaoPerfil.init(document.querySelectorAll('.perfil'), {
-            glare: true,
-            maxGlare: 0.3,
-            gyroscope: false,
-            scale: 1.02,
-        });
-
         document.onselectstart = function() { return false; }
         document.oncontextmenu = function() { return false; }
-
         window.addEventListener('keydown', function(event) {
             if (event.key === 'F12' || event.keyCode === 123) {
                 event.preventDefault();
             }
         });
-
-        setInterval(function() {
-            console.log('%csueth!', 'color: red; font-size: 24px;');
-            console.log('%cO dessa vez nao randolinha xz', 'color: red; font-size: 18px;');
-        }, 1000);
-
-        function getKey(e) {
-            var key = e.keyCode;
-            if (key == 16 || key == 17) mode = 2;
-            if (mode == 1 && key == 123) return false;
-            if (mode == 2 && (key == 73 || key == 74 || key == 85 || key == 123)) return false;
-        }
-        window.onkeydown = getKey;
     </script>
 </body>
 </html>
