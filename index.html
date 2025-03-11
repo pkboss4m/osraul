@@ -8,13 +8,20 @@
     <link rel="shortcut icon" href="images/fantasma.png" type="image/png">
     <meta property="og:title" content="OS REI DA NET !">
     <meta property="og:description" content="entre o amor e o dinheiro eu vou nas nota azul">
-    
+
+    <!-- Reset CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    
+    <!-- Google Font -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900">
+    
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="css/nycolas.css">
     
-    <script src="js/animacao.js"></script>
-    <script src="js/api.js"></script>
+    <!-- Scripts -->
+    <script src="js/animacao.js" defer></script>
+    <script src="js/api.js" defer></script>
+    
     <script>
         function audioPlay() {
             var audio = document.getElementById("audio");
@@ -25,7 +32,7 @@
     </script>
 </head>
 <body>
-    <audio loop preload="auto" id="audio">
+    <audio loop preload="metadata" id="audio">
         <source src="media/music.mp3" type="audio/mp3">
     </audio>
 
@@ -37,23 +44,25 @@
     </div>
 
     <div id="video" class="banner">
-        <video autoplay loop muted>
+        <!-- Video with preload attribute for better performance -->
+        <video autoplay loop muted preload="metadata">
             <source src="media/yu.mp4" type="video/mp4">
             Seu navegador não suporta vídeo.
         </video>
     </div>
 
     <div class="container">
+        <!-- Profiles Section -->
         <div class="perfil">
             <div class="barra"></div>
             <div class="content">
                 <img class="profile-img" data-user-id="1243886258506170408" src="#">
                 <strong>pk</strong>
-                <p>opkdrak</p>
+                <p>dribles</p>
             </div>
             <div class="badges">
                 <img src="images/discordnitro.svg" width="25" height="25">
-                <img src="images/boost24month.svg" width="25" height="25">
+                <img src="images/boost9month.svg" width="25" height="25">
             </div>
             <div class="sociais">
                 <a href="https://discord.gg/AFpTjC8ctP" target="_blank"><img src="images/discord.png" width="25" height="25"></a>
@@ -78,7 +87,21 @@
             </div>
         </div>
     </div>
-
+ <div class="barra"></div>
+            <div class="content">
+                <img class="profile-img" data-user-id="1339761530337755331" src="#">
+                <strong>J</strong>
+                <p>5v10</p>
+            </div>
+            <div class="badges">
+                <img src="images/discordnitro.svg" width="25" height="25">
+                <img src="images/boost24month.svg" width="25" height="25">
+            </div>
+            <div class="sociais">
+                <a href="https://discord.gg/AFpTjC8ctP" target="_blank"><img src="images/discord.png" width="25" height="25"></a>
+                <a href="https://www.youtube.com/@jotapso/videos" target="_blank"><img src="images/yt.png" width="25" height="25"></a>
+            </div>
+        </div>
     <script>
         var rev = "fwd";
         function titlebar(val) {
