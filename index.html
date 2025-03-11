@@ -21,6 +21,44 @@
     <!-- Scripts -->
     <script src="js/animacao.js" defer></script>
     <script src="js/api.js" defer></script>
+
+    <style>
+        /* CSS para o efeito 3D nos perfis */
+        .perfil {
+            position: relative;
+            display: inline-block;
+            width: 200px;
+            height: 300px;
+            margin: 20px;
+            perspective: 1000px; /* Garante a percepção do 3D */
+        }
+
+        .perfil .content {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+            background-color: #fff;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            transform-style: preserve-3d;
+        }
+
+        .perfil:hover .content {
+            transform: rotateY(10deg) rotateX(5deg);
+            cursor: pointer;
+        }
+
+        .perfil img.profile-img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        /* Garantir que os ícones sejam bem posicionados */
+        .perfil .badges img, .perfil .sociais img {
+            margin: 5px;
+        }
+    </style>
     
     <script>
         function audioPlay() {
@@ -44,7 +82,7 @@
     </div>
 
     <div id="video" class="banner">
-        <!-- Video with preload attribute for better performance -->
+        <!-- Video com preload para melhor performance -->
         <video autoplay loop muted preload="metadata">
             <source src="media/yu.mp4" type="video/mp4">
             Seu navegador não suporta vídeo.
@@ -52,7 +90,7 @@
     </div>
 
     <div class="container">
-        <!-- Profiles Section -->
+        <!-- Seção de Perfis -->
         <div class="perfil">
             <div class="barra"></div>
             <div class="content">
@@ -86,6 +124,7 @@
                 <a href="https://www.instagram.com/og_abner7/" target="_blank"><img src="images/insta.png" width="25" height="25"></a>
             </div>
         </div>
+
         <div class="perfil">
             <div class="barra"></div>
             <div class="content">
@@ -103,6 +142,7 @@
             </div>
         </div>
     </div>
+
     <script>
         var rev = "fwd";
         function titlebar(val) {
@@ -134,11 +174,12 @@
     </script>
 
     <script>
+        // Iniciar a animação 3D do perfil com a biblioteca AnimacaoPerfil
         AnimacaoPerfil.init(document.querySelectorAll('.perfil'), {
             glare: true,
             maxGlare: 0.3,
-            gyroscope: false,
-            scale: 1.02,
+            gyroscope: true,
+            scale: 1.05,
         });
 
         document.onselectstart = function() { return false; }
@@ -154,14 +195,6 @@
             console.log('%csueth!', 'color: red; font-size: 24px;');
             console.log('%cO dessa vez nao randolinha xz', 'color: red; font-size: 18px;');
         }, 1000);
-
-        function getKey(e) {
-            var key = e.keyCode;
-            if (key == 16 || key == 17) mode = 2;
-            if (mode == 1 && key == 123) return false;
-            if (mode == 2 && (key == 73 || key == 74 || key == 85 || key == 123)) return false;
-        }
-        window.onkeydown = getKey;
     </script>
 </body>
 </html>
