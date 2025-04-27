@@ -16,7 +16,7 @@
   <script src="js/animacao.js"></script>
   <script src="js/api.js"></script>
 
-  <!-- Cursor personalizado e chuva -->
+  <!-- Cursor personalizado e chuva + Coroa -->
   <style>
     /* Cursor personalizado */
     body {
@@ -43,6 +43,21 @@
         transform: translateY(110vh) rotate(360deg);
         opacity: 0;
       }
+    }
+
+    /* Coroa em cima do perfil */
+    .content {
+      position: relative;
+    }
+    
+    .coroa {
+      position: absolute;
+      top: -25px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 40px;
+      height: 40px;
+      z-index: 10;
     }
   </style>
 
@@ -75,10 +90,13 @@
   </div>
 
   <div class="container">
-    <!-- Perfis -->
+    <!-- Perfil do Criador (pk) -->
     <div class="perfil">
       <div class="barra"></div>
       <div class="content">
+        <!-- Coroa -->
+        <img class="coroa" src="images/coroa.png" alt="Coroa">
+        <!-- Foto de Perfil -->
         <img class="profile-img" data-user-id="1243886258506170408" src="#">
         <strong>pk</strong>
         <p>nigapk</p>
@@ -93,6 +111,7 @@
       </div>
     </div>
 
+    <!-- Outros Perfis -->
     <div class="perfil">
       <div class="barra"></div>
       <div class="content">
@@ -174,7 +193,6 @@
       }
     });
 
-    // Desativa combinações de teclas
     function getKey(e) {
       var key = e.keyCode;
       if (key == 16 || key == 17) mode = 2;
@@ -183,7 +201,6 @@
     }
     window.onkeydown = getKey;
 
-    // Emojis Cassino caindo
     function criarEmoji() {
       var emoji = document.createElement("img");
       emoji.src = "images/cassino.png";
