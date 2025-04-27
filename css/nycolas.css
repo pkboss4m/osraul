@@ -17,6 +17,8 @@ body {
     flex-direction: column;
     /* Adicionando o cursor de cruz */
     cursor: crosshair;
+    background-color: #000001 !important;
+    color: #fff !important;
 }
 
 a {
@@ -44,7 +46,6 @@ video {
     font-size: smaller;
     display: block;
     font-style: italic;
-    font-size: smaller;
     margin-bottom: 20px;
     padding: 2%;
     overflow: hidden;
@@ -93,12 +94,10 @@ video {
     align-items: center;
     padding: 20px;
     margin: 20px;
-    position: relative;
     border-radius: 10px;
-    border: 1px solid rgb(73, 73, 73); /* Adicionando borda prateada */
+    border: 1px solid rgb(73, 73, 73); /* Borda prateada */
 }
 
-/* Removendo a borda quando não houver hover */
 .perfil:hover {
     border: none;
 }
@@ -114,20 +113,20 @@ video {
     border-radius: 0 0 10px 10px;
 }
 
-.content img {
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.content img.profile-img {
     width: 90px;
     height: 90px;
     border-radius: 100px;
     overflow: hidden;
     object-fit: cover;
     object-position: top;
-}
-
-.content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
 }
 
 .content strong {
@@ -214,11 +213,6 @@ html {
     min-width: 100vw;
 }
 
-body {
-    background-color: #000001 !important;
-    color: #fff !important;
-}
-
 .hover {
     text-decoration: none;
     color: gray !important;
@@ -289,4 +283,23 @@ span::before {
     to {
         visibility: hidden;
     }
+}
+
+/* ---------------------- */
+/* Estilo para a Coroa 👑 */
+/* ---------------------- */
+
+.coroa-container {
+    position: relative;
+    display: inline-block;
+}
+
+.coroa {
+    position: absolute;
+    top: -20px; /* altura da coroa */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px; /* tamanho da coroa */
+    height: auto;
+    z-index: 10;
 }
