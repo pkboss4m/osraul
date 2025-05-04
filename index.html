@@ -1,30 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="white" />
-  <meta property="og:image" content="images/image.png" type="image/png" />
-  <link rel="shortcut icon" href="images/fantasma.png" type="image/png" />
-  <meta property="og:title" content="A NATA DE TUDO E NOIS !" />
-  <meta property="og:description" content="entre o amor e o dinheiro eu vou nas nota azul" />
-
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" />
-  <link rel="stylesheet" href="css/nycolas.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="white">
+  <meta property="og:image" content="images/image.png" type="image/png">
+  <link rel="shortcut icon" href="images/fantasma.png" type="image/png">
+  <meta property="og:title" content="A NATA DE TUDO E NOIS !">
+  <meta property="og:description" content="entre o amor e o dinheiro eu vou nas nota azul">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900">
+  <link rel="stylesheet" href="css/nycolas.css">
 
   <script src="js/animacao.js"></script>
   <script src="js/api.js"></script>
 
+  <!-- Cursor personalizado e chuva + Coroa -->
   <style>
+    /* Cursor personalizado */
     body {
       cursor: url('images/cursor-plus.png'), auto;
     }
 
+    /* Emojis caindo */
+    .cassino-emoji {
+      position: fixed;
+      top: -50px;
+      width: 20px;
+      height: 20px;
+      pointer-events: none;
+      z-index: 9999;
+      animation: cair 5s linear infinite;
+    }
+
+    @keyframes cair {
+      0% {
+        transform: translateY(-50px) rotate(0deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    /* Coroa em cima do perfil */
     .content {
       position: relative;
     }
-
+    
     .coroa {
       position: absolute;
       top: -25px;
@@ -34,24 +59,23 @@
       height: 40px;
       z-index: 10;
     }
-
-    #particles-container {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -1;
-      background: transparent;
-    }
   </style>
+
+  <script>
+    function audioPlay() {
+      var audio = document.getElementById("audio");
+      audio.volume = 1.0;
+      audio.currentTime = 0;
+      audio.play();
+    }
+  </script>
 </head>
 <body>
   <audio loop preload="metadata" id="audio">
-    <source src="media/music.mp3" type="audio/mp3" />
+    <source src="media/music.mp3" type="audio/mp3">
   </audio>
 
-  <input type="checkbox" autocomplete="off" id="overlay-toggle" />
+  <input type="checkbox" autocomplete="off" id="overlay-toggle">
   <div class="overlay fullscreen">
     <label for="overlay-toggle" onclick="audioPlay();">
       <span class="overlayhover hover" style="font-family: monospace; font-size: 0.6em;">Calma emocionado, a liderança ta de volta.</span>
@@ -60,122 +84,71 @@
 
   <div id="video" class="banner">
     <video autoplay loop muted preload="metadata">
-      <source src="media/yu.mp4" type="video/mp4" />
+      <source src="media/yu.mp4" type="video/mp4">
       Seu navegador não suporta vídeo.
     </video>
   </div>
 
   <div class="container">
+    <!-- Perfil do Criador (pk) -->
     <div class="perfil">
       <div class="barra"></div>
       <div class="content">
-        <img class="coroa" src="images/coroa.png" alt="Coroa" />
-        <img class="profile-img" data-user-id="1243886258506170408" src="#" />
+        <!-- Coroa -->
+        <img class="coroa" src="images/coroa.png" alt="Coroa">
+        <!-- Foto de Perfil -->
+        <img class="profile-img" data-user-id="1243886258506170408" src="#">
         <strong>pk</strong>
         <p>ceebothein</p>
       </div>
       <div class="badges">
-        <img src="images/fantasma.png" width="25" height="25" />
-        <img src="images/trevo.png" width="25" height="25" />
+        <img src="images/fantasma.png" width="25" height="25">
+        <img src="images/trevo.png" width="25" height="25">
       </div>
       <div class="sociais">
-        <a href="https://discord.gg/6XqPV9w547" target="_blank"><img src="images/discord.png" width="25" height="25" /></a>
-        <a href="https://www.youtube.com/@opkdrak" target="_blank"><img src="images/yt.png" width="25" height="25" /></a>
+        <a href="https://discord.gg/6XqPV9w547" target="_blank"><img src="images/discord.png" width="25" height="25"></a>
+        <a href="https://www.youtube.com/@opkdrak" target="_blank"><img src="images/yt.png" width="25" height="25"></a>
       </div>
     </div>
 
+    <!-- Outros Perfis -->
     <div class="perfil">
       <div class="barra"></div>
       <div class="content">
-        <img class="profile-img" data-user-id="792496884849442857" src="#" />
+        <img class="profile-img" data-user-id="792496884849442857" src="#">
         <strong>abner</strong>
         <p>.arrasca</p>
       </div>
       <div class="badges">
-        <img src="images/fantasma.png" width="25" height="25" />
-        <img src="images/betano.png" width="25" height="25" />
+        <img src="images/fantasma.png" width="25" height="25">
+        <img src="images/betano.png" width="25" height="25">
       </div>
       <div class="sociais">
-        <a href="https://discord.gg/6XqPV9w547" target="_blank"><img src="images/discord.png" width="25" height="25" /></a>
-        <a href="https://www.instagram.com/og_abner7/" target="_blank"><img src="images/insta.png" width="25" height="25" /></a>
+        <a href="https://discord.gg/6XqPV9w547" target="_blank"><img src="images/discord.png" width="25" height="25"></a>
+        <a href="https://www.instagram.com/og_abner7/" target="_blank"><img src="images/insta.png" width="25" height="25"></a>
       </div>
     </div>
 
     <div class="perfil">
       <div class="barra"></div>
       <div class="content">
-        <img class="profile-img" data-user-id="1334174275908796446" src="#" />
-        <strong>oliveira</strong>
+        <img class="profile-img" data-user-id="1334174275908796446" src="#">
+        <strong>Oliveira</strong>
         <p>artigo7.</p>
       </div>
       <div class="badges">
-        <img src="images/fantasma.png" width="25" height="25" />
-        <img src="images/cassino.png" width="25" height="25" />
+        <img src="images/fantasma.png" width="25" height="25">
+        <img src="images/cassino.png" width="25" height="25">
       </div>
       <div class="sociais">
-        <a href="https://discord.gg/6XqPV9w547" target="_blank"><img src="images/discord.png" width="25" height="25" /></a>
-        <a href="https://www.instagram.com/og_oliveira7/" target="_blank"><img src="images/insta.png" width="25" height="25" /></a>
+        <a href="https://discord.gg/6XqPV9w547" target="_blank"><img src="images/discord.png" width="25" height="25"></a>
+        <a href="https://www.instagram.com/og_oliveira7/" target="_blank"><img src="images/insta.png" width="25" height="25"></a>
       </div>
     </div>
   </div>
 
-  <!-- Partículas -->
-  <div id="particles-container"></div>
-  <script src="https://cdn.jsdelivr.net/npm/tsparticles@3/tsparticles.bundle.min.js"></script>
-  <script>
-    tsParticles.load("particles-container", {
-      background: { color: { value: "transparent" } },
-      fpsLimit: 60,
-      interactivity: {
-        events: {
-          onHover: {
-            enable: true,
-            mode: "attract"
-          },
-          resize: true
-        },
-        modes: {
-          attract: {
-            distance: 150,
-            duration: 0.3,
-            speed: 1
-          }
-        }
-      },
-      particles: {
-        number: { value: 45, density: { enable: true, area: 800 } },
-        color: { value: "#00ffaa" },
-        opacity: { value: 0.3 },
-        size: { value: 3 },
-        links: {
-          enable: true,
-          distance: 120,
-          color: "#00ffaa",
-          opacity: 0.2,
-          width: 1
-        },
-        move: {
-          enable: true,
-          speed: 0.6,
-          direction: "none",
-          random: true,
-          straight: false,
-          outModes: "out"
-        }
-      },
-      detectRetina: true
-    });
-  </script>
-
   <!-- Scripts -->
   <script>
-    function audioPlay() {
-      var audio = document.getElementById("audio");
-      audio.volume = 1.0;
-      audio.currentTime = 0;
-      audio.play();
-    }
-
     var rev = "fwd";
     function titlebar(val) {
       var msg = "Quem é ? Policia Federal 🏃💨";
@@ -186,27 +159,19 @@
         if (pos < le) {
           pos++;
           document.title = msg.substr(0, pos);
-          setTimeout(function () {
-            titlebar(pos);
-          }, speed);
+          setTimeout(function() { titlebar(pos); }, speed);
         } else {
           rev = "bwd";
-          setTimeout(function () {
-            titlebar(pos);
-          }, speed);
+          setTimeout(function() { titlebar(pos); }, speed);
         }
       } else {
         if (pos > 0) {
           pos--;
           document.title = msg.substr(le - pos, le);
-          setTimeout(function () {
-            titlebar(pos);
-          }, speed);
+          setTimeout(function() { titlebar(pos); }, speed);
         } else {
           rev = "fwd";
-          setTimeout(function () {
-            titlebar(pos);
-          }, speed);
+          setTimeout(function() { titlebar(pos); }, speed);
         }
       }
     }
@@ -219,10 +184,10 @@
       scale: 1.02,
     });
 
-    document.onselectstart = function () { return false; }
-    document.oncontextmenu = function () { return false; }
+    document.onselectstart = function() { return false; }
+    document.oncontextmenu = function() { return false; }
 
-    window.addEventListener('keydown', function (event) {
+    window.addEventListener('keydown', function(event) {
       if (event.key === 'F12' || event.keyCode === 123) {
         event.preventDefault();
       }
@@ -235,6 +200,7 @@
       if (mode == 2 && (key == 73 || key == 74 || key == 85 || key == 123)) return false;
     }
     window.onkeydown = getKey;
+
   </script>
 </body>
 </html>
